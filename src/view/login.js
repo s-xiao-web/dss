@@ -1,12 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+function Login() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <span>
+
+
+        我是login 组件啊啊啊啊啊啊
+
+        </span>
+
         <p>
         </p>
         <a
@@ -22,4 +26,4 @@ function App() {
   );
 }
 
-export default App;
+export default Login
