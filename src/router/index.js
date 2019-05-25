@@ -1,9 +1,8 @@
 import React, {Component} from 'react'
 import {HashRouter, Switch, Route} from 'react-router-dom'
 
-// const login = import("../view/login");
-import login from '../view/login'
-import Home from '../view/home'
+import login from '@/view/login/index.js'
+import Home from '@/view/home'
 export default class RouteConfig extends Component {
   render() {
     return (
