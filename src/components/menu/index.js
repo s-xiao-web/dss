@@ -1,27 +1,32 @@
 import React from 'react'
-import { Menu, Divider } from 'antd'
+import { Menu, Icon } from 'antd'
 import '@/components/menu/menu.less'
 
 const logo = require('@/logo.svg')
 
-const Logo = () => {
+const Logo = (props) => {
+  console.log( props.children )
   return (
-    <div class="logo_wrap">
+    <div className="logo_wrap">
       <img src={ logo } alt="" className="logo_img"/>
-      <span>华西决策支持系统</span>
+      <span>It.s My First App !!!</span>
     </div>
   )
 }
 
-const DssMenu = () => {
+const DssMenu = (props) => {
+  console.log(props)
   return (
     <div>
-      <Logo />
-      <Menu>
+      <Logo> haha </Logo>
+      <Menu theme="dark">
         {
-          [1,2,3].map((val, index) => {
+          props.data.map((val, index) => {
             return (
-              <Menu.Item key={index}> Navigation One </Menu.Item>
+              <Menu.Item key={val.url}>
+                <Icon type="pie-chart" />
+                {val.menu}
+              </Menu.Item>
             )
           })
         }

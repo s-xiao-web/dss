@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
 import './index.less'
-import axios from 'axios'
+import { postUserLogin } from '@/api'
 class Login extends Component {
   constructor(props) {
     super(props)
@@ -24,14 +24,8 @@ class Login extends Component {
   };
 
   userLogin() {
-    console.log( this.props.form )
-    console.log( this.state )
-    axios({
-      method: 'post',
-      data: this.state.params,
-      url: 'apis/common/user/login',
-    }).then(res => {
-      console.log( res )
+    postUserLogin(this.state.params).then(res => {
+      this.props.history.push('/')
     })
   }
   changeUserName(key, event) {
@@ -68,7 +62,7 @@ class Login extends Component {
                 getFieldDecorator('username', {
                   rules: [{ required: true, message: 'Please input your username!' }]
                 })(
-                  <Input placeholder="请输入用户名"  allowClear={true} onChange={this.changeUserName.bind(this, 'username')} prefix={<Icon type="gitlab" theme="filled" />} size="large" onPressEnter={this.handleSubmit.bind(this)}></Input>
+                  <Input placeholder="username"  allowClear={true} onChange={this.changeUserName.bind(this, 'username')} prefix={<Icon type="gitlab" theme="filled" />} size="large" onPressEnter={this.handleSubmit.bind(this)}></Input>
                 )
               }
             </Form.Item>
@@ -77,7 +71,7 @@ class Login extends Component {
                 getFieldDecorator('password', {
                   rules: [{ required: true, message: 'Please input your password!' }]
                 })(
-                  <Input.Password placeholder="请输入密码"  allowClear={true} onChange={this.changeUserName.bind(this, 'password')}  prefix={<Icon type="unlock" theme="filled" />} size="large"></Input.Password>
+                  <Input.Password placeholder="password"  allowClear={true} onChange={this.changeUserName.bind(this, 'password')}  prefix={<Icon type="unlock" theme="filled" />} size="large"></Input.Password>
                 )
               }
               
