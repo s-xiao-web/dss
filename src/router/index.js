@@ -1,21 +1,9 @@
-import React, {Component} from 'react'
-import {HashRouter, Switch, Route } from 'react-router-dom'
 
-import login from '@/view/login/index.js'
-import Home from '@/view/home'
-import UserMng from '@/view/userMng'
 
-export default class RouteConfig extends Component {
-  render() {
-    return (
-      <HashRouter>
-        <Switch>
-          <Route path="/login" component={login}/>
-          <Route path="/admin" component={Home}>
-              <Route path="/admin/userMng" component={UserMng}></Route>
-          </Route>
-        </Switch>
-      </HashRouter>
-    )
-  }
-}
+import Login from '@/view/login/index.js'
+import Index from '@/view/userMng/index.js'
+
+export const main = [
+  { path: '/login', name: '登录', component: Login },
+  { path: '/', exact: true,  name: '首页', component: Index }
+]

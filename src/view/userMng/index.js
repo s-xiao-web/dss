@@ -1,13 +1,33 @@
 import React from 'react';
+import AddTodo from '@/components/AddTodo'
+import TodoList from '@/components/TodoList'
+class TodoApp extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      todoList: []
+    }
+  }
 
-const UserMng = () => {
-  return(
-    <div>
+  componentDidMount() {
+    console.log()
+  }
 
-      哈哈 我是内容呢
-
-    </div>
-  )
+  addData(val) {
+    let arr = this.state.todoList.concat()
+    arr.push(val)
+    console.log(arr)
+    this.setState({
+      todoList:arr
+    })
+  }
+  render() {
+    return(
+      <div className="TodoApp">
+        <AddTodo />
+        <TodoList data={this.state.todoList}/>
+      </div>
+    )
+  }
 }
-
-export default UserMng
+export default TodoApp

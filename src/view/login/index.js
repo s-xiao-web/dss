@@ -25,7 +25,7 @@ class Login extends Component {
 
   userLogin() {
     postUserLogin(this.state.params).then(res => {
-      this.props.history.push('/')
+      this.props.history.push('/userMng')
     })
   }
   changeUserName(key, event) {
@@ -49,9 +49,9 @@ class Login extends Component {
   }
 
   render() {
+    console.log(this.props)
     let fontColor = '#1890ff'
     let { getFieldDecorator } = this.props.form
-
     return (
       <div className="login_wrapper">
         <div className="form_box">

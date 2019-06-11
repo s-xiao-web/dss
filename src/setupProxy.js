@@ -4,7 +4,7 @@ module.exports = function (app) {
   app.use(proxy(
     '/apis',
     {
-      target: 'http://110.43.198.66:60910',
+      target: 'http://211.144.5.66:60910',
       secure: false,
       changeOrigin: true,
       pathRewrite: {
