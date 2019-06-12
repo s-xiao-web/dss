@@ -1,0 +1,17 @@
+#my_sider .logo {
+  height: 32px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 16px;
+}
+.ant-layout-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff !important;
+}
+.ant-breadcrumb {
+  padding: 20px;
+}
+.content_box {
+  padding: 20px;
+}

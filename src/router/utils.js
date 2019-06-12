@@ -6,7 +6,7 @@ export const RouteWithSubRoutes = (route) => {
     <Route 
       path={route.path}
       exact={route.exact}
-      render={(props) => <route.component {...props} routeMsg={route}></route.component>}
+      render={(props) => <route.component {...props} route={route.children}></route.component>}
     ></Route>
   )
 }
